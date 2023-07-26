@@ -22,16 +22,21 @@
     to render react component-->
     <div id="app"></div>
 
-    <h1>Hello world</h1>
-
+    
     <script type="text/babel">
-      class App extends React.Component{
 
+      class App extends React.Component{
+          state={
+            "name":"raja",
+            "age":21
+          }
         render(){
             return(
-                <>
+                <div>
+                <h1>Hello world</h1>
                 {Math.random * 2}
-                </>
+                Hello iam {this.state.name} and iam {this.state.age}
+                 </div>
             )
         }
       }
