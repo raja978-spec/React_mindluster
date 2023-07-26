@@ -10,6 +10,7 @@
     <!-- This is the component which can used
     to render react component-->
     <div id="app"></div>
+    <div id="res"></div>
 
         <!-- This babel script are helps to render the react co
     component to the browser,
@@ -30,12 +31,20 @@
             "name":"raja",
             "age":21
           }
+          handelEvent=(e)=>{
+            this.setState({
+                "name":"ragu",
+                "age":23
+            })
+          }
+
         render(){
             return(
                 <div>
                 <h1>Hello world</h1>
                 Hello iam {this.state.name} and iam {this.state.age}
-                 </div>
+                <input type="submit" onClick={this.handelEvent}></input> 
+                </div>
             )
         }
       }
