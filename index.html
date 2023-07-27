@@ -38,12 +38,26 @@
             })
           }
 
+          handelChange=(e)=>{
+            this.setState({
+              "name":e.target.value
+            })
+          }
+
+          handelSubmit=(e)=>{
+            e.preventDefault();
+            console.log("Form submited ",this.state.name)
+          }
+
         render(){
             return(
                 <div>
                 <h1>Hello world</h1>
                 Hello iam {this.state.name} and iam {this.state.age}
-                <input type="submit" onClick={this.handelEvent}></input> 
+                <form onSubmit={this.handelSubmit}>
+                  <input type="text" onChange={this.handelChange}></input>
+                  <input type="submit" text="submit"></input>
+                  </form>
                 </div>
             )
         }
