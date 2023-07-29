@@ -6,16 +6,16 @@ export default class Navbar extends Component{
         const {name}=this.props;
         return(
             <div className='Nav'>
-             <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Info</li>
-                    <li>Contact US</li>
-                    <li>About US</li>
-                </ul>
-             </nav>
-             <h1>{name}</h1>
+        {   
+            name.map(data =>{
+            return(
+                <div className='Namelist' key={data.id}>
+                <h1>{data.name}</h1><br></br>
+                </div>
+                )})
+        }
             </div>
-        )
+        
+        )       
     }
 }
