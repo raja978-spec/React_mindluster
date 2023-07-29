@@ -3,6 +3,7 @@ import React ,{Component} from 'react'
 export default class Navbar extends Component{
 
     render(){
+        const {name}=this.props;
         return(
             <div className='Nav'>
              <nav>
@@ -13,6 +14,7 @@ export default class Navbar extends Component{
                     <li>About US</li>
                 </ul>
              </nav>
+             <h1>{name}</h1>
             </div>
         )
     }
