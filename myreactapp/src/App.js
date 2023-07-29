@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-
+import AddNinja from './components/AddNinja';
 class App extends Component {
     state={
       nameList:[
@@ -30,6 +30,8 @@ class App extends Component {
           Learn React
         </a>
       </header>
+
+      <AddNinja/>
     </div>
     </>
    
