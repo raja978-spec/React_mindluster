@@ -23,7 +23,7 @@ export default class AddNinja extends Component{
             <form onSubmit={this.handelSubmit}>
                 Id:<input id="Id" placeholder='Id' onChange={this.handelChange}></input><br></br>
                 Name:<input id="Name" placeholder='Name' onChange={this.handelChange}></input><br></br>
-                Age:<input id="Age" placeholder='Age' onChange={this.handelChange}></input><br></br>
+                Age:<input id="Age" placeholder='Age' onChange={this.handelChange}> </input><br></br>
                <button>Submit</button><br></br>
             </form>
             </center>
