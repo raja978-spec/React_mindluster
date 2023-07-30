@@ -5,7 +5,7 @@ import AddNinja from './components/AddNinja';
 class App extends Component {
 
     state={
-      nameList:[
+      "nameList":[
         {id:1,name:"raja"},
         {id:2,name:"ra"},
         {id:3,name:"r"},
@@ -14,9 +14,12 @@ class App extends Component {
     }
 
     addNinja=(ninja)=>{
+      ninja.id=Math.random()    
       this.state.nameList.push(ninja)
-      console.log(this.state.nameList)
+      this.setState({
+        "nameList":this.state.nameList})
     }
+  
   render(){
     
   return (
