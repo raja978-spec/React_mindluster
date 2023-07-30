@@ -1,6 +1,7 @@
-const Navbar=(props)=>{
+const Ninjas=(props)=>{
 
-  const {name}=props;
+  const {name,del}=props;
+
     return(
         <div className='Nav'>
         {   
@@ -8,7 +9,7 @@ const Navbar=(props)=>{
             return(
           <div className="data" key={data.id}>
             <h1>{data.name}</h1>
-            <button onClick={()}></button>
+            <button onClick={()=>del(data.id)}>Delete</button>
           </div>
             )
         })
@@ -19,4 +20,4 @@ const Navbar=(props)=>{
     
 }
 
-export default Navbar
+export default Ninjas

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import Navbar from './components/Ninjas';
+import Ninjas from './components/Ninjas';
 import AddNinja from './components/AddNinja';
 class App extends Component {
 
@@ -19,13 +19,23 @@ class App extends Component {
       this.setState({
         "nameList":this.state.nameList})
     }
+
+    deleteNinjs=(id)=>{
+      const newdata=this.state.nameList.filter((data)=>{
+        return(data.id !== id)
+      })
+      this.setState({
+        "nameList":newdata
+      })
+    
+    }
   
   render(){
     
   return (
     <>
     <div className="App">
-    <Navbar name={this.state.nameList}/>
+    <Ninjas name={this.state.nameList} del={this.deleteNinjs}/>
     
       <header className="App-header">
         <p>
