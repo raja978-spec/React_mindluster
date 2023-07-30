@@ -14,7 +14,8 @@ class App extends Component {
     }
 
     addNinja=(ninja)=>{
-    this.state.nameList.push(ninja)
+      this.state.nameList.push(ninja)
+      console.log(this.state.nameList)
     }
   render(){
     

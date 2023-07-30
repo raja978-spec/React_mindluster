@@ -6,12 +6,11 @@ const Navbar=(props)=>{
         <div className='Nav'>
         {   
         name.map(data =>{
-        return data.name=== "r" ? 
-        (<div className='Namelist' key={data.id}>
-            <h1>{data.name}</h1><br></br>
-            </div>
-        ):
-        (null)
+            return(
+          <div className="data" key={data.id}>
+            <h1>{data.name}</h1>
+          </div>
+            )
         })
         }
         </div>
