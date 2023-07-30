@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import AddNinja from './components/AddNinja';
 class App extends Component {
+
     state={
       nameList:[
         {id:1,name:"raja"},
@@ -10,8 +11,13 @@ class App extends Component {
         {id:3,name:"r"},
       ]
     
-  }
+    }
+
+    addNinja=(ninja)=>{
+    this.state.nameList.push(ninja)
+    }
   render(){
+    
   return (
     <>
     <div className="App">
@@ -31,7 +37,7 @@ class App extends Component {
         </a>
       </header>
 
-      <AddNinja/>
+      <AddNinja add={this.addNinja}/>
     </div>
     </>
    
