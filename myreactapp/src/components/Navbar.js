@@ -1,7 +1,6 @@
-
 const Navbar=(props)=>{
-    const {name}=props;
-   
+
+  const {name}=props;
     return(
         <div className='Nav'>
         {   
@@ -9,6 +8,7 @@ const Navbar=(props)=>{
             return(
           <div className="data" key={data.id}>
             <h1>{data.name}</h1>
+            <button onClick={()}></button>
           </div>
             )
         })
