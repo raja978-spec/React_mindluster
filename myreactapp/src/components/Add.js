@@ -3,20 +3,21 @@ import React,{Component} from "react";
 export default class Add extends Component{
 
     state={
-        "nameList":[
-            {"id":1,"name":"t"}
-        ]
+        "id":null,
+       "name":null
     }
-    handelChange(e){
-        const data=this.state.nameList.push({"id":Math.random(),"name":e.target.value})
-        this.setState({
-            nameList:data
-        })
+    
+    handelChange=(e)=>{
+      this.setState({
+        "id":Math.random(),
+        "name":e.target.value
+      })
     }
 
-    handelSubmit(e){
+    handelSubmit=(e)=>{
+        e.preventDefault()
         const {addname}=this.props;
-        addname(this.state.nameList)
+        addname(this.state)
     }
     render(){
         return(

@@ -3,14 +3,26 @@ import Add from "./Add";
 export default class Home extends Component{
 
     state={
-        nameList:[
+        "nameList":[
             {id:1,name:"raja"},
             {id:2,name:"ra"},
         ]
     }
 
     addName=(data)=>{
-        console.log(data)
+        this.state.nameList.push(data)
+        this.setState({
+            nameList:this.state.nameList
+        })
+    }
+
+    deleteName=(id)=>{
+        const data=this.state.nameList.filter((data)=>{
+            return data.id !== id 
+        })
+        this.setState({
+            'nameList':data 
+        })
     }
     render(){
 
@@ -22,7 +34,7 @@ export default class Home extends Component{
                 
                 return(
                 <div className="list" key={data.id}>
-                   <h1>{data.name}</h1>
+                   <h1 onClick={()=>this.deleteName(data.id)}>{data.name}</h1>
                 </div>
                 )
             })
