@@ -2,6 +2,7 @@ import { Component } from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './components/Home'
 import NavBar from './components/NavBar';
+
 class App extends Component {
    
     
@@ -13,7 +14,6 @@ class App extends Component {
           <BrowserRouter>
             <Routes>
               <Route path="/home" element={<Home/>}>
-
               </Route>
             </Routes>
           </BrowserRouter>
