@@ -1,48 +1,42 @@
 import React,{Component} from "react";
-import Add from "./Add";
+import axios from 'axios'
+
 export default class Home extends Component{
 
-    
     state={
-        "nameList":[
-            {id:1,name:"raja"},
-            {id:2,name:"ra"},
-        ]
+        post:[]
     }
 
-    addName=(data)=>{
-        this.state.nameList.push(data)
+    componentDidMount(){
+       axios.get('https://jsonplaceholder.typicode.com/posts')
+       .then((res)=>{
         this.setState({
-            nameList:this.state.nameList
+            post:res.data.slice(1,10)
         })
+       })
+       .catch((err)=>console.log(err))
     }
 
-    deleteName=(id)=>{
-        const data=this.state.nameList.filter((data)=>{
-            return data.id !== id 
-        })
-        this.setState({
-            'nameList':data 
-        })
-    }
     render(){
-        
-        return(
-            <>
-            {
-            this.state.nameList.map((data)=>
-            {
-                
-                return(
-                <div className="list" key={data.id}>
-                   <h1 onClick={()=>this.deleteName(data.id)}>{data.name}</h1>
-                </div>
-                )
+        const postList=this.state.post.length ? (
+            this.state.post.map((data)=>{
+             return(
+                <div key={data.id}>
+                <h1>{data.title}</h1>
+                <p>{data.body}</p>
+            </div>
+             )
             })
             
-            }
-            <Add addname={this.addName}/>
-       
+        ):(
+            <div>
+                <h1>Not content to display</h1>
+            </div>
+        )
+
+        return(
+            <>
+           {postList}
             </>
         )
     }

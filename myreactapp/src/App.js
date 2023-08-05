@@ -1,8 +1,8 @@
-
 import { Component } from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './components/Home';
 import NavBar from './components/NavBar';
+import About from './components/About';
 
 class App extends Component {
    
@@ -15,6 +15,8 @@ class App extends Component {
      <NavBar/>
      <Routes>
       <Route path="/home" element={<Home/>}></Route>
+      <Route path="/about" element={<About/>}></Route>
+    
      </Routes>
      </BrowserRouter>
       </div>
