@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom"
 
-const NavBar=()=>{
-
-    return(
+const NavBar=(props)=>{
+    
+    const his=useHistory()
+    setTimeout(()=>{
+        his.push('/home')
+    },2000)
+return(
         <div>
             <nav>
                 <ul>
@@ -16,6 +21,7 @@ const NavBar=()=>{
                     </li>
               </ul>
             </nav>
+            
         </div>
     )
 }
