@@ -16,6 +16,7 @@ class App extends Component {
      <Routes>
       <Route path="/home" element={<Home/>}></Route>
       <Route path="/about" element={<About/>}></Route>
+      <Route path="/:post_is" element={<Post/>}></Route>
     
      </Routes>
      </BrowserRouter>

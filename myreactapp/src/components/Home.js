@@ -7,7 +7,7 @@ export default class Home extends Component{
         post:[]
     }
 
-    componentDidMount(){
+    componentWillMount(){
        axios.get('https://jsonplaceholder.typicode.com/posts')
        .then((res)=>{
         this.setState({
