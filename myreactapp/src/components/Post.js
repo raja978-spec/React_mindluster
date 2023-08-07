@@ -3,10 +3,11 @@ import axios from "axios";
 import { useState } from "react";
 
  const Post=()=> {
-        const{post,setPost}=useState()
+        const[post,setPost]=useState({
+            post:null
+        })
 
         const {post_id}=useParams()
-        console.log(post_id)
             axios.get('https://jsonplaceholder.typicode.com/posts/',post_id)
             .then((res)=>{
              setPost({
@@ -18,7 +19,7 @@ import { useState } from "react";
      
         return(
             <>
-                {post_id}
+                {post}
             </>
         )
     
