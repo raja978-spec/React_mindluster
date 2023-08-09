@@ -1,34 +1,39 @@
-import { Component } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useState,useEffect } from "react";
 
- class Post extends Component {
+ const Post=()=> {
+        const[post,setPost]=useState(null)
 
-    state={
-        post:null 
-    }
-    componentWillMount(){
-
-        const {post_id}=this.props.macth.param.post_id
-        console.log(post_id)
+        const {post_id}=useParams()
         
-        axios.get('https://jsonplaceholder.typicode.com/posts/',post_id)
-        .then((res)=>{
-        this.setState({
-            post:[res.data]
+        
+        useEffect(()=>{
+            axios.get(`https://jsonplaceholder.typicode.com/posts/${post_id}`)
+            .then((res)=>{
+             setPost(
+                res.data
+             )
+             console.log(post)
+            })
+            .catch((err)=>console.log(err))
+    
         })
-         console.log(this.post)
-        })
-        .catch((err)=>console.log(err))
-    }
-
-    render(){
+            
+        
+        if (!post){
+            return(
+                <>
+                <h1>Loading....</h1>
+                </>
+            )
+        }
         return(
             <>
-                
+                <h1>{post.title}</h1>
+                <p>{post.body}</p>
             </>
         )
-    }    
-     
     
 }
 
