@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import IMG from '../Earth.jpg'
 
 const NavBar=(props)=>
 {
 
     return(
         <div>
+        <img scr={IMG} alt="Earth"></img>
             <nav>
                 <ul>
                   <li><Link to="/home">Home</Link>
