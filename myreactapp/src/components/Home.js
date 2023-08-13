@@ -1,9 +1,10 @@
 import React,{Component} from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+class Home extends Component{
 
-export default class Home extends Component{
-
+    /*
     state={
         post:[]
     }
@@ -17,10 +18,12 @@ export default class Home extends Component{
        })
        .catch((err)=>console.log(err))
     }
-
+*/
     render(){
-        const postList=this.state.post.length ? (
-            this.state.post.map((data)=>{
+        console.log(this.prop)
+
+        const postList=this.props.post.length ? (
+            this.props.post.map((data)=>{
              return(
                 <div key={data.id}>
                 <Link to={'/'+data.id}><h1>{data.title}</h1></Link>
@@ -43,3 +46,16 @@ export default class Home extends Component{
         )
     }
 }
+
+// This function are helps to map the state
+// value which is passed from the upper 
+// component
+const mapState=(state)=>{
+    return{
+        post:state.posts 
+    }
+}
+// connect is the function helps to 
+// access the react to access redux store
+// values.
+export default connect(mapState)(Home)

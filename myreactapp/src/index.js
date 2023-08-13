@@ -2,24 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import myreducer from './reducer/roore';
 
 import { createStore } from 'redux'; // Helps to create store
 // provider allows our react project to integrate
 // with redux store
 import { Provider } from 'react-redux';
 
-const InitState={
-  todos:[],
-  posts:[]
-}
-
-// This reducer initilize the state values 
-// as empty array in first load.
-function myreducer(state=InitState,action){
-    return state
-}
 const store=createStore(myreducer)
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
