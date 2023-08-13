@@ -8,10 +8,25 @@ import { createStore } from 'redux'; // Helps to create store
 // with redux store
 import { Provider } from 'react-redux';
 
+const InitState={
+  todos:[],
+  posts:[]
+}
+
+// This reducer initilize the state values 
+// as empty array in first load.
+function myreducer(state=InitState,action){
+    return state
+}
+const store=createStore(myreducer)
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <Provider store={store}>
     <App />
+  </Provider>
   </React.StrictMode>
 );
 
