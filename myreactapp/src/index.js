@@ -2,11 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import myreducer from './reducer/roore';
 
-import { createStore } from 'redux'; // Helps to create store
-// provider allows our react project to integrate
-// with redux store
+import myreducer from './reducer/roore';
 import { Provider } from 'react-redux';
 
 const store=createStore(myreducer)
@@ -15,8 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <Provider store={store}>
-    <App />
+  <App />
   </Provider>
+    
   </React.StrictMode>
 );
 
