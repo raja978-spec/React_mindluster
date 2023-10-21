@@ -1,7 +1,8 @@
-body{
-    background-color: hotpink;
+.b{
+  background-color: black;
+  color: aliceblue;
 }
 
-form{
-    background-color: gold;
+.bs{
+  box-sizing: border-box;
 }
